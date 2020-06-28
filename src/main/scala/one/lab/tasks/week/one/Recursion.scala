@@ -3,16 +3,16 @@ import math._
 
 object Recursion {
   def printNTimes(n: Int, value: String): Unit =
-    if (n == 1) value
-    else printNTimes(n-1, value)
+    if (n == 1) print(value)
+    else {
+      print(value)
+      printNTimes(n-1, value)
+    }
   def gcd(a: Long, b: Long): Long = {
 
-    if (a == b) a
-    else if (a == 1 | b == 1) 1
-    else {
-      if (b > a) gcd(b-a, a)
-      else gcd(a-b, b)
-    }
+    if (a == 0) b
+    else gcd(a, b % a)
+
   }
 
 

@@ -9,8 +9,10 @@ object Operators {
     * @param surname just surname.
     * @param age just age.
     */
-  class Person(name: String, surname: String, age: Int) {
-    override def toString: String = s"$name $surname $age"
+  class Person(personName: String, personSurname: String, personAge: Int) {
+    var name = personName
+    var surname = personSurname
+    var age = personAge
   }
 
   /**
@@ -20,7 +22,7 @@ object Operators {
     * @param age just age.
     * @return should return string in the following format: "name surname age".
     */
-  def getPersonInfo(name: String, surname: String, age: Int): String = s"$name $surname $age"
+  def getPersonInfo(name: String, surname: String, age: Int): String = s"${name} ${surname} ${age}"
 
   /**
     * should return Person info as in [[getPersonInfo]] method.
@@ -28,7 +30,7 @@ object Operators {
     * @return return should be the same as in [[getPersonInfo]].
     * @hint: try to override [[Person.toString]] method.
     */
-  def getPersonInfoObject(person: Person): String = s"$person.name $person.surname $person.age"
+  def getPersonInfoObject(person: Person): String = s"${person.name} ${person.surname} ${person.age}"
 
   /**
     * Just compare to Persons by their age and return elder one.
